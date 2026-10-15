@@ -1,0 +1,59 @@
+---
+title: "Construindo uma Arquitetura de Blog de Alta Performance com Next.js"
+description: "Uma análise detalhada sobre como utilizar Server Components, MDX e Tailwind CSS v4 para entregar um blog com Core Web Vitals impecáveis."
+date: "2026-10-15"
+tags: ["nextjs", "react", "architecture", "webdev"]
+---
+
+# Bem-vindo ao meu novo blog!
+
+Este é o primeiro artigo escrito em **MDX**. O uso de Markdown com React permite renderizar tanto texto formatado quanto componentes interativos diretamente no conteúdo.
+
+## Por que utilizar SSG e Server Components?
+
+1. **Performance Absoluta:** O HTML é pré-renderizado em tempo de _build_.
+2. **SEO Nativo:** Motores de busca indexam a página sem precisar esperar pela execução de client-side scripts.
+3. **Zero JS Desnecessário:** Nenhum parser de Markdown é enviado para o cliente.
+
+```javascript
+// Exemplo de código limpo em TypeScript
+const blog = {
+  framework: "Next.js",
+  performance: 100,
+  cleanCode: true,
+};
+console.log(`Blog rodando com ${blog.framework}!`);
+```
+
+---
+
+## 4. Componentes UI (`components/`)
+
+### A. Header (`components/Header.tsx`)
+
+```tsx
+import Link from "next/link";
+
+export function Header() {
+  return (
+    <header className="border-b border-zinc-200 dark:border-zinc-800">
+      <div className="max-w-3xl mx-auto px-4 h-16 flex items-center justify-between">
+        <Link
+          href="/"
+          className="font-bold text-xl tracking-tight text-zinc-900 dark:text-zinc-100"
+        >
+          dev<span className="text-blue-500">.blog</span>
+        </Link>
+        <nav className="flex items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+          <Link
+            href="/"
+            className="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          >
+            Artigos
+          </Link>
+        </nav>
+      </div>
+    </header>
+  );
+}
+```

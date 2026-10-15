@@ -58,7 +58,6 @@ export default async function PostPage({ params }: Props) {
         </time>
       </header>
 
-      {/* Renderização tratada do Markdown com suporte ao Tailwind Typography */}
       <div className="prose dark:prose-invert max-w-none">
         <MDXRemote source={post.content} />
       </div>
